@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZKA | TikTok LIVE Auction</title><link rel="stylesheet" href="/style.css">
+</head>
+<body><div class="shell">
+<header class="top"><div><div class="eyebrow">TIKTOK LIVE SYSTEM</div><h1>AZKA <span>AUCTION</span></h1></div><div id="status" class="status">DISCONNECTED</div></header>
+<main class="grid">
+<section class="card"><div class="card-head"><h2>Connect TikTok LIVE</h2><span class="pill">LIVE CONNECT</span></div>
+<label>Username TikTok streamer</label><div class="row"><input id="username" placeholder="contoh: azka123"><button id="connectBtn">CONNECT</button></div>
+<p class="muted">Masukkan username akun yang sedang LIVE. Tidak perlu memasukkan password.</p><div class="row"><button id="disconnectBtn" class="secondary">DISCONNECT</button><span id="connectInfo" class="muted">Belum terhubung</span></div></section>
+<section class="card"><div class="card-head"><h2>Pengaturan Lelang</h2><span class="pill purple">AZKA MODE</span></div>
+<label>Judul lelang</label><input id="title" value="AZKA LIVE AUCTION">
+<div class="two"><div><label>Durasi (detik)</label><input id="duration" type="number" min="5" value="180"></div><div><label>Extra time per gift (detik)</label><input id="extra" type="number" min="0" value="5"></div></div>
+<label class="check"><input id="extraOnGift" type="checkbox" checked> Tambahkan extra time setiap gift masuk</label><button id="saveBtn" class="secondary full">SIMPAN PENGATURAN</button></section>
+<section class="card timer-card"><div class="card-head"><h2>Countdown Lelang</h2><span class="pill" id="auctionState">BELUM MULAI</span></div>
+<div id="timer" class="timer">03:00</div><div class="row timer-actions"><button id="startBtn">MULAI</button><button id="pauseBtn" class="secondary">JEDA</button><button id="resetBtn" class="danger">RESET</button></div>
+<p class="muted">Gift dihitung hanya ketika timer berjalan. Reset menghapus leaderboard lelang ini.</p></section>
+<section class="card"><div class="card-head"><h2>Leaderboard</h2><span class="pill purple">TOP 10</span></div>
+<div class="table-wrap"><table><thead><tr><th>Rank</th><th>Username TikTok</th><th>Total Coin</th></tr></thead><tbody id="leaders"><tr><td colspan="3" class="empty">Belum ada gift saat timer berjalan.</td></tr></tbody></table></div><div id="lastGift" class="last-gift">Menunggu gift...</div></section>
+<section class="card"><div class="card-head"><h2>Overlay LIVE</h2><span class="pill">OBS READY</span></div><p class="muted">Tambahkan alamat ini sebagai Browser Source di OBS.</p>
+<label>Overlay transparan</label><div class="copyrow"><input readonly id="overlayUrl"><button data-copy="overlayUrl">SALIN</button></div>
+<label>Overlay panel OBS</label><div class="copyrow"><input readonly id="panelUrl"><button data-copy="panelUrl">SALIN</button></div></section>
+<section class="card"><div class="card-head"><h2>Test Gift</h2><span class="pill">LOCAL TEST</span></div>
+<div class="row"><input id="testName" placeholder="username"><input id="testCoin" type="number" min="1" value="100"><button id="testBtn" class="secondary">KIRIM TEST</button></div><p class="muted">Untuk mencoba tampilan. Test gift hanya masuk saat timer berjalan.</p></section>
+</main><footer>AZKA AUCTION • LIVE GIFT LEADERBOARD</footer></div>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script></body></html>
